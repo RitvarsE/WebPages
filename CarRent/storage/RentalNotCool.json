@@ -1,0 +1,38 @@
+[
+  {
+    "id": "0",
+    "name": "Volvo",
+    "model": "S90",
+    "consumption": "7",
+    "price": "50",
+    "type": "Car",
+    "rented": "0"
+  },
+  {
+    "id": "1",
+    "name": "Mazda",
+    "model": "Mazda 5",
+    "consumption": "6",
+    "price": "35",
+    "type": "Car",
+    "rented": "0"
+  },
+  {
+    "id": "2",
+    "name": "Volkswagen",
+    "model": "Toureg",
+    "consumption": "8",
+    "price": "40",
+    "type": "Car",
+    "rented": "0"
+  },
+  {
+    "id": "3",
+    "name": "BMW",
+    "model": "X7",
+    "consumption": "9",
+    "price": "100",
+    "type": "Car",
+    "rented": "0"
+  }
+]
