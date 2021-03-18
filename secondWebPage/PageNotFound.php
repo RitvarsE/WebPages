@@ -1,19 +1,10 @@
 <html>
 <head>
-    <title>Making progress</title>
-    <style>
-        table, th, td {
-            border: 1px solid black;
-        }
-    </style>
+    <meta http-equiv="refresh" content="1; url='/" />
 </head>
 <body>
-<table style="width:10%">
-    <tr>
-        <th><a href="/home">Home</a></th>
-        <th><a href="/aboutus">About Us</a></th>
-    </tr>
-</table>
+<?php include('app/Views/header.html'); ?>
 <h1>404 PAGE NOT FOUND.</h1>
+<h1>Redirecting to Home page.</h1>
 </body>
 </html>

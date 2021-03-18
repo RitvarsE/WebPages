@@ -1,0 +1,12 @@
+[
+  {
+    "flower": "Daisy",
+    "price": "10",
+    "amount": "200"
+  },
+  {
+    "flower": "Orchid",
+    "price": "5",
+    "amount": "100"
+  }
+]
