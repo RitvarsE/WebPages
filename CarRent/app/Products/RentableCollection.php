@@ -6,7 +6,7 @@ class RentableCollection
 {
     private array $rentals = [];
 
-    public function add(Rentable $product, int $id): void
+    public function add(Rentable $product, int $id, bool $rented): void
     {
         $identifier = $product->id();
         $this->rentals[$identifier] = [
@@ -15,7 +15,7 @@ class RentableCollection
             "model" => $product->getModel(),
             "consumption" => $product->getConsumption(),
             "price" => $product->getPrice(),
-            "rented" => $product->getRented()
+            "rented" => $rented
         ];
     }
 

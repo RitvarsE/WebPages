@@ -50,11 +50,11 @@ if (!empty($_POST["rent"]) && $_POST["rent"]) {
                 <th><?= $model ?></th>
                 <td><?= $consumption ?> l/100km</td>
                 <th><?= $price ?> $/day</th>
-                <th><?php echo $rented === 0 ? '<span style="color:darkgreen;">Available</span>' : '<span style="color:red;">Rented</span>' ?></th>
+                <th><?php echo $rented === false ? '<span style="color:darkgreen;">Available</span>' : '<span style="color:red;">Rented</span>' ?></th>
                 <th class="button-style">
                     <form method="post" action="/">
                         <button type="submit" name="rent" class="button"
-                                value="<?= $rentals . ',' . $id ?>"><?php echo $rented === 0 ? 'Rent' : 'Return' ?></button>
+                                value="<?= $rentals . ',' . $id ?>"><?php echo $rented === false ? 'Rent' : 'Return' ?></button>
                     </form>
                 </th>
             </tr>

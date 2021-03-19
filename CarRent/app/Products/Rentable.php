@@ -12,7 +12,5 @@ interface Rentable
 
     public function getPrice(): int;
 
-    public function getRented(): int;
-
     public function id(): string;
 }

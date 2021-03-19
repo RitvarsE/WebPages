@@ -19,8 +19,7 @@ class notCoolGarage implements Garages
             $this->rentals->add(new $type($rental['name'],
                 $rental['model'],
                 $rental['consumption'],
-                $rental['price'],
-                $rental['rented']), $rental['id']);
+                $rental['price']), $rental['id'], $rental['rented']);
         }
     }
 
@@ -32,10 +31,10 @@ class notCoolGarage implements Garages
     public function rent(string $id): void
     {
         $rentalsFromJson = json_decode(file_get_contents("storage/RentalNotCool.json"), true, 512, JSON_THROW_ON_ERROR);
-        if ($rentalsFromJson[$id]['rented'] === '0') {
-            $rentalsFromJson[$id]['rented'] = '1';
+        if ($rentalsFromJson[$id]['rented'] === false) {
+            $rentalsFromJson[$id]['rented'] = true;
         } else {
-            $rentalsFromJson[$id]['rented'] = '0';
+            $rentalsFromJson[$id]['rented'] = false;
         }
         file_put_contents("storage/RentalNotCool.json", json_encode($rentalsFromJson, JSON_THROW_ON_ERROR));
     }
