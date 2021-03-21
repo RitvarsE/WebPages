@@ -19,7 +19,7 @@ class RentableCollection
         ];
     }
 
-    public function getRentals(): array
+    public function getAllProducts(): array
     {
         return $this->rentals;
     }

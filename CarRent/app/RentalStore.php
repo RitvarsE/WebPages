@@ -18,10 +18,10 @@ class RentalStore
         return $this->garages;
     }
 
-    public function getGarage(string $productID): Garages
+    public function whichGarage(string $productID): Garages
     {
         foreach ($this->garages as $garage) {
-            foreach ($garage->getRentals()->getRentals() as $product =>
+            foreach ($garage->getRentalCollection()->getAllProducts() as $product =>
             ['name' => $name, 'model' => $model, 'consumption' => $consumption, 'price' => $price, 'rented' => $rented]) {
                 if ($product === $productID) {
                     return $garage;

@@ -23,7 +23,7 @@ class notCoolGarage implements Garages
         }
     }
 
-    public function getRentals(): RentableCollection
+    public function getRentalCollection(): RentableCollection
     {
         return $this->rentals;
     }

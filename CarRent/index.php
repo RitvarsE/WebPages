@@ -9,15 +9,14 @@ $rentalStore = new RentalStore();
 $rentalStore->addGarage(new CoolGarage());
 $rentalStore->addGarage(new notCoolGarage());
 
-
 if (!empty($_POST["rent"]) && $_POST["rent"]) {
     $array = explode(',', $_POST["rent"]);
     foreach ($rentalStore->getGarages() as $garage) {
-        if (($rentalStore->getGarage($array[0]) === $garage)) {
+        if (($rentalStore->whichGarage($array[0]) === $garage)) {
             $garage->rent($array[1]);
         }
     }
-    header("Location: /");
+    header("Refresh:0");
 }
 ?>
 <!DOCTYPE html>
@@ -39,7 +38,7 @@ if (!empty($_POST["rent"]) && $_POST["rent"]) {
         <th>Availability</th>
     </tr>
     <?php foreach ($rentalStore->getGarages() as $garages): ?>
-        <?php foreach ($garages->getRentals()->getRentals() as $rentals => ['id' => $id,
+        <?php foreach ($garages->getRentalCollection()->getAllProducts() as $rentals => ['id' => $id,
                        'name' => $name,
                        'model' => $model,
                        'consumption' => $consumption,
@@ -52,7 +51,7 @@ if (!empty($_POST["rent"]) && $_POST["rent"]) {
                 <th><?= $price ?> $/day</th>
                 <th><?php echo $rented === false ? '<span style="color:darkgreen;">Available</span>' : '<span style="color:red;">Rented</span>' ?></th>
                 <th class="button-style">
-                    <form method="post" action="/">
+                    <form method="post">
                         <button type="submit" name="rent" class="button"
                                 value="<?= $rentals . ',' . $id ?>"><?php echo $rented === false ? 'Rent' : 'Return' ?></button>
                     </form>
