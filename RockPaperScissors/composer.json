@@ -1,0 +1,21 @@
+{
+    "name": "ritva/rock-paper-scissors",
+    "authors": [
+        {
+            "name": "RitvarsE",
+            "email": "ritvars.eglajs@outlook.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "description": "",
+    "require": {
+        "nikic/fast-route": "^1.3"
+    }
+}
