@@ -12,4 +12,9 @@ class ScissorsTest extends TestCase
         $paper = new Scissors('scissors');
         self::assertTrue($paper->victory(new Paper('paper')));
     }
+    public function testName(): void
+    {
+        $paper = new Scissors('Scissors');
+        self::assertEquals('Scissors', $paper->getName());
+    }
 }

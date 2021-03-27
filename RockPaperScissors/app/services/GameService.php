@@ -3,7 +3,6 @@
 
 namespace App\Services;
 
-use App\Game;
 
 class GameService
 {

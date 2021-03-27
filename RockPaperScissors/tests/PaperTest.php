@@ -12,4 +12,9 @@ class PaperTest extends TestCase
         $paper = new Paper('paper');
         self::assertTrue($paper->victory(new Rock('rock')));
     }
+    public function testName(): void
+    {
+        $paper = new Paper('paper');
+        self::assertEquals('paper', $paper->getName());
+    }
 }

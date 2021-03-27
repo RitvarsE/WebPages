@@ -1,0 +1,10 @@
+{
+    "name": "ritva/person-register",
+    "authors": [
+        {
+            "name": "RitvarsE",
+            "email": "ritvars.eglajs@outlook.com"
+        }
+    ],
+    "require": {}
+}

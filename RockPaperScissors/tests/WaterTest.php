@@ -17,4 +17,9 @@ class WaterTest extends TestCase
         $paper = new Water('water');
         self::assertTrue($paper->victory(new Paper('paper')));
     }
+    public function testName(): void
+    {
+        $paper = new Water('Water');
+        self::assertEquals('Water', $paper->getName());
+    }
 }

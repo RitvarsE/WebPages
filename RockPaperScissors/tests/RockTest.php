@@ -12,4 +12,9 @@ class RockTest extends TestCase
         $paper = new Rock('Rock');
         self::assertTrue($paper->victory(new Scissors('scissors')));
     }
+    public function testName(): void
+    {
+        $paper = new Rock('rock');
+        self::assertEquals('rock', $paper->getName());
+    }
 }
