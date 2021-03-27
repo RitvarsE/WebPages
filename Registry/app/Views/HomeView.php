@@ -1,8 +1,3 @@
-<?php
-
-use App\Controllers\HomeController;
-$homeController = new HomeController();
-?>
 <!DOCTYPE html>
 <html lang="lv">
 <head>
@@ -29,15 +24,23 @@ $homeController = new HomeController();
 <body>
 
 <h2>Person registry</h2>
-<form method="post" action="/add">
-    <button name="add" value="add" class="btn success">Add people</button>
-</form>
-<form method="post" action="/update">
-    <button name="update" value="update" class="btn success">Update people</button>
-</form>
-<form method="post" action="/delete">
-    <button name="delete" value="delete" class="btn success">Delete people</button>
-</form>
+<table>
+    <td>
+        <form method="post" action="/add">
+            <button name="add" value="add" class="btn success">Add people</button>
+        </form>
+    </td>
+    <td>
+        <form method="post" action="/update">
+            <button name="update" value="update" class="btn success">Update people</button>
+        </form>
+    </td>
+    <td>
+        <form method="post" action="/delete">
+            <button name="delete" value="delete" class="btn success">Delete people</button>
+        </form>
+    </td>
+</table>
 </body>
 </html>
 

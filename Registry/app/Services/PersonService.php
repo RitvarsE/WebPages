@@ -11,6 +11,7 @@ class PersonService
 {
     private PersonCollection $personCollection;
     private Medoo $database;
+
     public function __construct()
     {
         $this->personCollection = new PersonCollection();
@@ -47,9 +48,26 @@ class PersonService
     {
         $this->database->update("registry", ['note' => $note], ['personid' => $personid]);
     }
+
     public function deleteUser(string $personid): void
     {
-        $this->database->delete("registry", ['personid'=>$personid]);
+        $this->database->delete("registry", ['personid' => $personid]);
+    }
+
+    public function findPerson(string $personid): array
+    {
+        return $this->database->select('registry', '*', ["personid" => $personid]);
+    }
+
+    public function isValidPersonID(string $personid): bool
+    {
+        if (strlen($personid) === 12 && $personid[6] === '-') {
+            return ctype_digit(preg_replace("/\D+/", "", $personid));
+        }
+        if (strlen($personid) === 11) {
+            return ctype_digit($personid);
+        }
+        return false;
     }
 
 }
