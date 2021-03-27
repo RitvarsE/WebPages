@@ -8,6 +8,12 @@ use App\Services\PersonService;
 
 class AddController
 {
+    private PersonService $personService;
+
+    public function __construct()
+    {
+        $this->personService = new PersonService();
+    }
 
     public function index(): void
     {
