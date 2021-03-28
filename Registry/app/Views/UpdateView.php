@@ -2,7 +2,7 @@
 <body>
 <?php include 'HomeView.php';?>
 <form method="get">
-    <label for="personid">Find the person for whom to add note by person ID</label>
+    <label for="personid">Find the person for whom to add note by person ID(without '-')</label>
     <input type="text" id="personid" name="personid"><br><br>
     <button type="submit" formmethod="post">FIND</button>
 </form>
@@ -27,5 +27,6 @@ if(isset($_POST['note']))
     echo 'You successfully added note';
 }
 ?>
+<?php include 'footer.php';?>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <body>
 <?php include 'HomeView.php';?>
 <form method="get">
-    <label for="personid">Find the person to delete by person ID</label>
+    <label for="personid">Find the person to delete by person ID(without '-')</label>
     <input type="text" id="personid" name="personid"><br><br>
     <button type="submit" formmethod="post">FIND</button>
 </form>
@@ -26,5 +26,6 @@ if (isset($_POST['yes'])) {
     echo "You successfully deleted!";
 }
 ?>
+<?php include 'footer.php';?>
 </body>
 </html>
