@@ -59,15 +59,5 @@ class PersonService
         return $this->database->select('registry', '*', ["personid" => $personid]);
     }
 
-    public function isValidPersonID(string $personid): bool
-    {
-        if (strlen($personid) === 12 && $personid[6] === '-') {
-            return ctype_digit(preg_replace("/\D+/", "", $personid));
-        }
-        if (strlen($personid) === 11) {
-            return ctype_digit($personid);
-        }
-        return false;
-    }
 
 }
